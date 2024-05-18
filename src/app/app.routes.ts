@@ -5,9 +5,11 @@ import { ArticlePreviewComponent, ChallengesComponent } from '@my-challenges/cha
   {
     path: '',
     component: ChallengesComponent,
+    title: 'My Challenges',
   },
   {
     path: 'articles',
     component: ArticlePreviewComponent,
+    title: 'Articles Preview',
   },
 ];
