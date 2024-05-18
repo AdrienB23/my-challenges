@@ -1,8 +1,13 @@
 import { Route } from '@angular/router';
-import { ChallengesComponent } from './challenges/challenges.component';
-import {  ArticlePreviewComponent} from '@my-challenges/article-preview';
+import { ArticlePreviewComponent, ChallengesComponent } from '@my-challenges/challenges';
 
-export const appRoutes: Route[] = [
-  { path: '', component: ChallengesComponent },
-  { path: 'articles', component: ArticlePreviewComponent },
+    export const appRoutes: Route[] = [
+  {
+    path: '',
+    component: ChallengesComponent,
+  },
+  {
+    path: 'articles',
+    component: ArticlePreviewComponent,
+  },
 ];

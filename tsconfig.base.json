@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-challenges/article-preview": [
-        "modules/article-preview/src/index.ts"
-      ],
       "@my-challenges/challenges": ["modules/challenges/src/index.ts"]
     }
   },

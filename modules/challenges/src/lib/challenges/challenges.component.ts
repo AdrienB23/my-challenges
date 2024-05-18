@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-challenges',
+  selector: 'lib-challenges',
   templateUrl: './challenges.component.html',
   styleUrl: './challenges.component.css',
 })

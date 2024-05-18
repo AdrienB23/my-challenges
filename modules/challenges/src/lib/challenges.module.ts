@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { ArticlePreviewComponent, ShareComponent } from '@my-challenges/article-preview';
 import { CommonModule } from '@angular/common';
+import { ChallengesComponent } from './challenges/challenges.component';
+import { ArticlePreviewComponent } from './article-preview/article-preview.component';
+import { ShareComponent } from './article-preview/share/share.component';
 
 @NgModule({
   declarations: [
     ArticlePreviewComponent,
-    ShareComponent
-  ],
-  exports: [
+    ShareComponent,
+    ChallengesComponent,
     ArticlePreviewComponent,
-    ShareComponent
+    ShareComponent,
   ],
-  imports: [
-    CommonModule,
-  ]
+  exports: [ArticlePreviewComponent, ShareComponent],
+  imports: [CommonModule],
 })
 export class ChallengesModule {}
