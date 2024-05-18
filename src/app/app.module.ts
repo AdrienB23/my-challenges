@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { provideRouter, RouterModule, RouterOutlet, withHashLocation } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { ChallengesModule } from '@my-challenges/challenges';
 
 @NgModule({
   declarations: [
@@ -19,7 +17,9 @@ import { ChallengesModule } from '@my-challenges/challenges';
     RouterOutlet,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    provideRouter(appRoutes, withHashLocation())
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArticlePreviewComponent } from './article-preview.component';
-import { ArticleService } from '../services/article.service';
+import { ArticleService } from './article.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
