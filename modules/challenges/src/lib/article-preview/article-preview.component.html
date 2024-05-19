@@ -1,23 +1,23 @@
 <main>
-  <section *ngFor="let article of articles">
+  <section *ngFor="let article of articles; index as id">
     <article class="image" style="background-image: url({{article.pictureSrc}});"></article>
     <article class="description">
       <div class="description-text">
         <h1>{{article.title}}</h1>
         <p>{{article.presentation}}</p>
       </div>
-      <div [class]="mobileClicked ? 'bottom-clicked' : 'bottom'">
-        <div *ngIf="!mobileClicked" class="profile">
+      <div [class]="mobileClicked[id] ? 'bottom-clicked' : 'bottom'">
+        <div *ngIf="!mobileClicked[id]" class="profile">
           <img class="profile-picture" src="{{article.profileSrc}}" alt="Profile picture">
           <div class="profile-text">
             <h2>{{article.name}}</h2>
             <p class="date">{{article.date}}</p>
           </div>
         </div>
-        <div [class]="shareClick ? 'share-clicked' : ''">
-          <lib-share *ngIf="shareClick"></lib-share>
-          <div id="share" class="share" (mouseover)="shareHovered(true)" (mouseleave)="shareHovered(false) " (click)="shareClicked()">
-            <img [src]="shareHover || shareClick ? 'assets/images/article-preview/icon-share-white.svg' : 'assets/images/article-preview/icon-share.svg'" alt="Share">
+        <div [class]="shareClick[id] ? 'share-clicked' : ''">
+          <lib-share *ngIf="shareClick[id]"></lib-share>
+          <div [id]="'share' + id" class="share" (mouseover)="shareHovered(id, true)" (mouseleave)="shareHovered(id, false) " (click)="shareClicked(id)">
+            <img [src]="shareHover[id] || shareClick[id] ? 'assets/images/article-preview/icon-share-white.svg' : 'assets/images/article-preview/icon-share.svg'" alt="Share">
           </div>
         </div>
       </div>

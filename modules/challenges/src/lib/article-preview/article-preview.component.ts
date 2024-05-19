@@ -11,11 +11,11 @@ import { ArticleService } from './article.service';
 
 export class ArticlePreviewComponent implements OnInit {
   articles: Article [] = [];
-  shareHover = false;
-  shareClick = false;
+  shareHover: boolean[] = [];
+  shareClick: boolean[] = [];
   screenHeight!: number;
   screenWidth!: number;
-  mobileClicked= false;
+  mobileClicked: boolean[]= [];
 
 
   constructor(private articleService: ArticleService) {
@@ -26,30 +26,37 @@ export class ArticlePreviewComponent implements OnInit {
   getScreenSize() {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
-    this.mobileClicked = this.shareClick && this.screenWidth <= 800;
+    for (let i = 0; i < this.articles.length; i++) {
+      this.mobileClicked[i] = this.shareClick[i] && this.screenWidth <= 800;
+    }
   }
 
   ngOnInit(): void {
     this.getArticles();
+    for (let i = 0; i < this.articles.length; i++) {
+      this.shareHover[i] = false;
+      this.shareClick[i] = false;
+      this.mobileClicked[i] = false;
+    }
   }
 
   getArticles(): void {
     this.articles = this.articleService.getArticles();
   }
 
-  shareHovered(value: boolean): void {
-    this.shareHover = value;
-    this.shareColorChange(value || this.shareClick);
+  shareHovered(id: number, value: boolean): void {
+    this.shareHover[id] = value;
+    this.shareColorChange(id, value || this.shareClick[id]);
   }
 
-  shareClicked() {
-    this.shareClick = !this.shareClick;
-    this.shareColorChange(this.shareClick ||this.shareHover);
-    this.mobileClicked = this.shareClick && this.screenWidth <= 800;
+  shareClicked(id: number) {
+    this.shareClick[id] = !this.shareClick[id];
+    this.shareColorChange(id, this.shareClick[id] || this.shareHover[id]);
+    this.mobileClicked[id] = this.shareClick[id] && this.screenWidth <= 800;
   }
 
-  private shareColorChange(value: boolean) {
-    const shareElement = document.getElementById("share");
+  private shareColorChange(id: number, value: boolean) {
+    const shareElement = document.getElementById("share" + id);
     if (shareElement !== null) {
       shareElement.style.backgroundColor = value ? 'hsl(214, 17%, 51%)': 'hsl(210, 46%, 95%)';
     }

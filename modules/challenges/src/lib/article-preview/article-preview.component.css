@@ -12,9 +12,11 @@
 main {
     background-color: var(--light-grayish-blue);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    row-gap: 50px;
 }
 
 section {
@@ -122,11 +124,14 @@ h2 {
 }
 
 @media (max-width: 800px) {
+    main {
+        padding: 75px 0 75px 0;
+    }
+
     section {
         min-height: 500px;
         flex-direction: column;
         width: 90%;
-        margin: 75px 0 75px 0;
     }
 
     .image {
@@ -169,5 +174,3 @@ h2 {
         line-height: 24px;
     }
 }
-
-
