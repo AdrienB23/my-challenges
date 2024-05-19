@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { ArticlePreviewComponent, ChallengesComponent, NewsletterSignUpComponent } from '@my-challenges/challenges';
+import { ChallengesComponent, NewsletterSignUpComponent } from '@my-challenges/challenges';
 
     export const appRoutes: Route[] = [
       {
@@ -11,11 +11,6 @@ import { ArticlePreviewComponent, ChallengesComponent, NewsletterSignUpComponent
         path: 'challenges',
         component: ChallengesComponent,
         title: 'My Challenges'
-      },
-      {
-        path: 'challenges/articles',
-        title: 'Articles Preview',
-        component: ArticlePreviewComponent,
       },
       {
         path: 'challenges/newsletter',

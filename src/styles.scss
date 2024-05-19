@@ -1,10 +1,5 @@
 /* Fonts */
 @font-face {
-  font-family: 'Manrope';
-  src: url('assets/fonts/Manrope/Manrope-VariableFont_wght.ttf');
-}
-
-@font-face {
   font-family: 'Roboto-bold';
   src: url('assets/fonts/Roboto/Roboto-Bold.ttf');
 }
@@ -17,12 +12,6 @@
 /* Colors */
 
 :root {
-  /* Article preview */
-  --very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --desaturated-dark-blue: hsl(214, 17%, 51%);
-  --share-color: #6E8098;
-  --grayish-blue: hsl(212, 23%, 69%);
-  --light-grayish-blue: hsl(210, 46%, 95%);
   /* Newsletter */
   --tomato: hsl(4, 100%, 67%);
   --dark-slate-grey: hsl(234, 29%, 20%);
