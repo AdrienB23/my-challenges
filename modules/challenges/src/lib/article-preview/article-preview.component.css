@@ -1,0 +1,173 @@
+* {
+    font-family: 'Manrope', serif;
+    font-size: 13px;
+}
+
+:root {
+    --share-color: #6E8098;
+}
+
+/* Containers */
+
+main {
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    width: 55%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 40px 40px 0 rgba(72, 85, 106, 0.05);
+}
+
+.image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px 0 0 10px;
+    width: 75%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 30px;
+    row-gap: 10px;
+}
+
+.description-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 40px 0 40px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px 30px 40px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: var(--light-grayish-blue);
+    cursor: pointer;
+    color: #6E8098;
+}
+
+.share img {
+    width: 50%;
+}
+
+.share-clicked {
+    position: relative;
+}
+
+lib-share {
+    position: absolute;
+    width: max-content;
+    top: -80px;
+    left: -110px;
+}
+
+/* Pictures style */
+
+
+.profile-picture {
+    border-radius: 100%;
+    width: 40px;
+}
+
+/* Texts style */
+
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+    line-height: 30px;
+}
+
+p {
+    font-weight: 500;
+    color: var(--desaturated-dark-blue);
+    line-height: 20px;
+}
+
+h2 {
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
+
+.date {
+    color: var(--grayish-blue);
+}
+
+@media (max-width: 800px) {
+    section {
+        min-height: 500px;
+        flex-direction: column;
+        width: 90%;
+        margin: 75px 0 75px 0;
+    }
+
+    .image {
+        background-position: top;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        flex: 1;
+    }
+
+    .description-text {
+        padding: 0 35px 10px 35px;
+    }
+
+    .bottom {
+        padding: 20px 35px 20px 35px;
+    }
+
+    .bottom-clicked {
+        border-radius: 0 0 10px 10px;
+        padding: 15px 35px 15px 35px;
+        background-color: var(--very-dark-grayish-blue);
+    }
+
+    .share-clicked {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: initial;
+        width: 100%;
+    }
+
+    lib-share {
+        position: initial;
+        display: flex;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+
