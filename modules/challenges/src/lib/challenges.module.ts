@@ -12,7 +12,10 @@ import { ShareComponent } from './article-preview/share/share.component';
     ArticlePreviewComponent,
     ShareComponent,
   ],
-  exports: [ArticlePreviewComponent, ShareComponent],
+  exports: [
+    ArticlePreviewComponent,
+    ShareComponent,
+  ],
   imports: [CommonModule],
 })
 export class ChallengesModule {}
