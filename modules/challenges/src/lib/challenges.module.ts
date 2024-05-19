@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ChallengesComponent } from './challenges/challenges.component';
 import { ArticlePreviewComponent } from './article-preview/article-preview.component';
 import { ShareComponent } from './article-preview/share/share.component';
-import { NewsletterSignUpComponent } from './newsletter-sign-up/newsletter-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -12,12 +11,10 @@ import { NewsletterSignUpComponent } from './newsletter-sign-up/newsletter-sign-
     ChallengesComponent,
     ArticlePreviewComponent,
     ShareComponent,
-    NewsletterSignUpComponent,
   ],
   exports: [
     ArticlePreviewComponent,
     ShareComponent,
-    NewsletterSignUpComponent
   ],
   imports: [CommonModule],
 })
