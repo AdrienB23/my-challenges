@@ -1,0 +1,23 @@
+{
+  "form":
+  {
+    "title": "Stay updated!",
+    "stats": "Join 60,000+ product managers receiving monthly updates on:",
+    "updates": [
+      "Product discovery and building what matters",
+      "Measuring to ensure updates are a success",
+      "And much more!"
+    ],
+    "email": "Email address",
+    "subscribe": "Subscribe to monthly newsletter",
+    "error": "Valid email required",
+    "example": "email@company.com"
+  },
+  "success":
+  {
+    "title": "Thanks for subscribing!",
+    "confirmation1": "A confirmation email has been sent to ",
+    "confirmation2": ". Please open it and click the button inside to confirm your subscription.",
+    "dismiss": "Dismiss message"
+  }
+}

@@ -1,0 +1,29 @@
+<main>
+  <section>
+    <article class="form">
+      <header>
+        <h1>{{form.title}}</h1>
+        <p>{{form.stats}}</p>
+        <div class="list-container">
+          <div *ngFor="let update of form.updates" class="list">
+            <img src="assets/images/newsletter/icon-list.svg" alt="List">
+            <p>{{update}}</p>
+          </div>
+        </div>
+      </header>
+      <form [formGroup]="emailForm" (submit)="submit()">
+        <div class="email-container">
+          <div class="email-labels">
+            <label for="email">{{form.email}}</label>
+            <label *ngIf="!isFormValid && email?.errors?.['email']" class="error" for="email">{{form.error}}</label>
+          </div>
+          <input type="email" [class]="!isFormValid && email?.errors?.['email'] ? 'email-error': 'email'" (click)="isFormValid = true;" (change)="emailUpdate()" name="email" id="email" formControlName="email" min="1" placeholder="{{form.example}}" required >
+        </div>
+        <input type="submit" class="submit" value="{{form.subscribe}}">
+      </form>
+    </article>
+    <article class="image">
+      <img [src]="illustrationImage()" alt="Illustration" class="illustration">
+    </article>
+  </section>
+</main>
