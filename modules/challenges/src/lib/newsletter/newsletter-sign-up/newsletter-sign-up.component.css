@@ -1,0 +1,172 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--dark-slate-grey);
+}
+
+/* Containers */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--charcoal-grey);
+    min-height: 100vh;
+    padding: 50px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 75px 0 50px;
+    row-gap: 40px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 25px;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.list {
+    display: flex;
+    column-gap: 15px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 25px;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.email-labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Images */
+
+img {
+    max-width: fit-content;
+}
+
+/* Inputs&Buttons */
+
+input {
+    border-radius: 8px;
+    padding: 18px 20px;
+    border: none;
+}
+
+.email {
+    border: solid 1px var(--grey);
+}
+
+.email-error, .email-error:focus {
+    border: solid 1px var(--tomato);
+    background-color: #ffe8e6;
+    outline: none;
+}
+
+.email:focus     {
+    border: solid 1px var(--dark-slate-grey);
+    outline: none;
+}
+
+.submit {
+    background-color: var(--dark-slate-grey);
+    cursor: pointer;
+}
+
+.submit:hover,.submit:active  {
+    background: linear-gradient(to right, #FF537B 0%, #FE6A3C 100%);
+    box-shadow: 0px 5px 25px 8px rgba(255, 98, 87, 0.27);
+}
+
+/* Fonts */
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    line-height: 24px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.error {
+    color: var(--tomato);
+}
+
+.submit {
+    font-weight: 700;
+    color: var(--white);
+}
+
+@media all and (max-width: 850px) {
+    /* Containers */
+
+    main {
+        padding: 0;
+    }
+
+    section {
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+        padding: 35px 20px 50px 20px;
+    }
+
+    .illustration {
+        max-width: none;
+        width: 100%;
+    }
+
+    /* Fonts */
+
+    h1 {
+        font-size: 35px;
+    }
+}
