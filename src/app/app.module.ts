@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { FormGuard, NewsletterSignUpComponent } from '@my-challenges/challenges';
+import { ArticlePreviewModule } from '@my-challenges/article-preview';
+import { TimeTrackingModule } from '@my-challenges/time-tracking';
+import { NewsletterModule } from '@my-challenges/newsletter';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,12 @@ import { FormGuard, NewsletterSignUpComponent } from '@my-challenges/challenges'
     BrowserModule,
     RouterOutlet,
     RouterModule.forRoot(appRoutes),
+    ArticlePreviewModule,
+    NewsletterModule,
+    TimeTrackingModule,
   ],
   providers: [
     provideRouter(appRoutes, withHashLocation()),
-    FormGuard,
-    NewsletterSignUpComponent
   ],
   bootstrap: [AppComponent],
 })

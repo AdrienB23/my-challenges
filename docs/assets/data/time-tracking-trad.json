@@ -1,0 +1,42 @@
+{
+  "en" : {
+    "report": "Report for",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "types": [
+      "Work",
+      "Play",
+      "Study",
+      "Exercise",
+      "Social",
+      "Self Care"
+    ],
+    "last": [
+      "Last Day",
+      "Last Week",
+      "Last Month"
+    ],
+    "hours": "hrs"
+  },
+  "fr" : {
+    "report": "Rapport pour",
+    "daily": "Par jour",
+    "weekly": "Par semaine",
+    "monthly": "Par mois",
+    "types": [
+      "Travail",
+      "Jeu",
+      "Étude",
+      "Exercice",
+      "Social",
+      "Soins personnels"
+    ],
+    "last": [
+      "Dernière Journée",
+      "Semaine Dernière",
+      "Mois Dernier"
+    ],
+    "hours": "h"
+  }
+}

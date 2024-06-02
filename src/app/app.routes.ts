@@ -1,14 +1,15 @@
 import { Route } from '@angular/router';
+import { ChallengesComponent } from '@my-challenges/challenges';
+import { ArticlePreviewComponent } from '@my-challenges/article-preview';
 import {
-  ArticlePreviewComponent,
-  ChallengesComponent,
   NewsletterComponent,
   NewsletterSignUpComponent,
-  NewsletterSuccessComponent,
-  FormGuard
-} from '@my-challenges/challenges';
+  NewsletterSuccessComponent
+} from '@my-challenges/newsletter';
+import { NewsletterFormGuardService } from '../../libs/shared/services/newsletter-form-guard.service';
+import { TimeTrackingComponent } from '@my-challenges/time-tracking';
 
-    export const appRoutes: Route[] = [{
+export const appRoutes: Route[] = [{
         path:'',
         redirectTo: '/challenges',
         pathMatch: 'full'
@@ -32,6 +33,11 @@ import {
             path: 'success',
             title: 'Newsletter success',
             component: NewsletterSuccessComponent,
-            canActivate: [FormGuard]
+            canActivate: [NewsletterFormGuardService]
           }]
-      }]
+      }, {
+        path: 'time',
+        title: 'Time Tracking',
+        component: TimeTrackingComponent,
+      }
+]

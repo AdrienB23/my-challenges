@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-challenges/challenges": ["modules/challenges/src/index.ts"]
+      "@my-challenges/article-preview": [
+        "modules/article-preview/src/index.ts"
+      ],
+      "@my-challenges/challenges": ["modules/challenges/src/index.ts"],
+      "@my-challenges/newsletter": ["modules/newsletter/src/index.ts"],
+      "@my-challenges/time-tracking": ["modules/time-tracking/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
