@@ -1,12 +1,8 @@
 /* Fonts */
+
 @font-face {
   font-family: 'Manrope';
   src: url('assets/fonts/Manrope/Manrope-VariableFont_wght.ttf');
-}
-
-@font-face {
-  font-family: 'Roboto-bold';
-  src: url('assets/fonts/Roboto/Roboto-Bold.ttf');
 }
 
 @font-face {
@@ -19,22 +15,32 @@
   src: url('assets/fonts/Rubik/Rubik-VariableFont_wght.ttf');
 }
 
+@font-face {
+  font-family: 'Space Mono';
+  src: url('assets/fonts/SpaceMono/SpaceMono-Regular.ttf');
+}
+
 /* Colors */
 
 :root {
   /* Article Preview */
+
   --very-dark-grayish-blue: hsl(217, 19%, 35%);
   --desaturated-dark-blue: hsl(214, 17%, 51%);
   --share-color: #6E8098;
   --grayish-blue: hsl(212, 23%, 69%);
   --light-grayish-blue: hsl(210, 46%, 95%);
+
   /* Newsletter */
+
   --tomato: hsl(4, 100%, 67%);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
+
   /* Time Tracking */
+
   --blue: hsl(246, 80%, 60%);
   --light-red-work: hsl(15, 100%, 70%);
   --soft-blue-play: hsl(195, 74%, 62%);
@@ -46,6 +52,15 @@
   --dark-blue: hsl(235, 46%, 20%);
   --desaturated-blue: hsl(235, 45%, 61%);
   --pale-blue: hsl(236, 100%, 87%);
+
+  /* Calculator */
+
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
 }
 
 * {
