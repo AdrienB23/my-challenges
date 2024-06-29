@@ -1,9 +1,12 @@
 {
   "en" : {
     "report": "Report for",
-    "daily": "Daily",
-    "weekly": "Weekly",
-    "monthly": "Monthly",
+    "profile": "Jeremy Robson",
+    "timeList": [
+      "Daily",
+      "Weekly",
+      "Monthly"
+    ],
     "types": [
       "Work",
       "Play",
@@ -21,9 +24,12 @@
   },
   "fr" : {
     "report": "Rapport pour",
-    "daily": "Par jour",
-    "weekly": "Par semaine",
-    "monthly": "Par mois",
+    "profile": "Jeremy Robson",
+    "timeList": [
+      "Par jour",
+      "Par semaine",
+      "Par mois"
+    ],
     "types": [
       "Travail",
       "Jeu",

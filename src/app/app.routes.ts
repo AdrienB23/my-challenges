@@ -36,7 +36,7 @@ export const appRoutes: Route[] = [{
             canActivate: [NewsletterFormGuardService]
           }]
       }, {
-        path: 'time',
+        path: 'time/:language',
         title: 'Time Tracking',
         component: TimeTrackingComponent,
       }
