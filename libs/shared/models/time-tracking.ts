@@ -1,8 +1,7 @@
 export interface TimeTracking {
   report: string;
-  daily: string;
-  weekly: string;
-  monthly: string;
+  profile: string;
+  timeList: string[];
   types: string[];
   last: string[];
   hours: string;

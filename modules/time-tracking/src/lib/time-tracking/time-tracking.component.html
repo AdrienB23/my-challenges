@@ -1,12 +1,33 @@
 <main>
   <section>
-    <article>
+    <article class="profile-container">
       <header>
-        <img src="assets/images/time-tracking/image-jeremy.png" alt="Profile Picture">
-        <div>
+        <img src="assets/images/time-tracking/image-jeremy.png" alt="Profile Picture" class="profile-picture">
+        <div class="profile-title">
           <p>{{text.report}}</p>
+          <h1>{{text.profile}}</h1>
         </div>
       </header>
+      <nav>
+        <ul>
+          <li *ngFor="let timeStr of text.timeList; index as i"  [style]="'color: ' + ((this.time === i) ? 'white' : 'var(--pale-blue)') + ';'"  (click)="changeTime(i)">{{timeStr}}</li>
+        </ul>
+      </nav>
+    </article>
+    <article *ngFor="let type of text.types; index as i" class="types-container">
+      <div class="bg bg-{{typeList[i]}}" [style]="'background-image: url(\'assets/images/time-tracking/icon-' + (typeList[i]) + '.svg\');'">
+        <div class="empty"></div>
+        <div class="data-container">
+          <div class="first-data-container">
+            <h3>{{type}}</h3>
+            <img [src]="'assets/images/time-tracking/icon-ellipsis' + (detailHover[i] ? '-white' : '') + '.svg'" alt="Details" class="details" (mouseover)="this.detailHover[i] = true" (mouseleave)="this.detailHover[i] = false">
+          </div>
+          <div class="second-data-container">
+            <h2 *ngIf="this.displayData">{{currentTimeFrame[i].current}}{{text.hours}}</h2>
+            <p>{{text.last[this.time]}} - {{currentTimeFrame[i].previous}}{{text.hours}}</p>
+          </div>
+        </div>
+      </div>
     </article>
   </section>
 </main>
