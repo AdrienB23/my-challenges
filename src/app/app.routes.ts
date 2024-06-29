@@ -8,6 +8,7 @@ import {
 } from '@my-challenges/newsletter';
 import { NewsletterFormGuardService } from '../../libs/shared/services/newsletter-form-guard.service';
 import { TimeTrackingComponent } from '@my-challenges/time-tracking';
+import { CalculatorComponent } from '@my-challenges/calculator';
 
 export const appRoutes: Route[] = [{
         path:'',
@@ -39,5 +40,9 @@ export const appRoutes: Route[] = [{
         path: 'time/:language',
         title: 'Time Tracking',
         component: TimeTrackingComponent,
+      }, {
+        path: 'calculator/:language',
+        title: 'Calculator App',
+        component: CalculatorComponent,
       }
 ]

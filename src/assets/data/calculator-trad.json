@@ -1,0 +1,22 @@
+{
+  "en": {
+    "bill": "Bill",
+    "select": "Select Tip",
+    "custom": "Custom",
+    "number": "Number of People",
+    "tip": "Tip Amount",
+    "person": "/ person",
+    "total": "Total",
+    "reset": "Reset"
+  },
+  "fr": {
+    "bill": "Facture",
+    "select": "Sélectionner un pourboire",
+    "custom": "Personnaliser",
+    "number": "Nombre de personnes",
+    "tip": "Montant du pourboire",
+    "person": "/ personne",
+    "total": "Total",
+    "reset": "Réinitialiser"
+  }
+}
