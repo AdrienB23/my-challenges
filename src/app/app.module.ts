@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ArticlePreviewModule } from '@my-challenges/article-preview';
 import { TimeTrackingModule } from '@my-challenges/time-tracking';
 import { NewsletterModule } from '@my-challenges/newsletter';
+import { CalculatorModule } from '@my-challenges/calculator';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NewsletterModule } from '@my-challenges/newsletter';
     ArticlePreviewModule,
     NewsletterModule,
     TimeTrackingModule,
+    CalculatorModule
   ],
   providers: [
     provideRouter(appRoutes, withHashLocation()),

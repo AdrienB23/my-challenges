@@ -1,0 +1,248 @@
+*, *::ng-deep input {
+    font-family: "Space Mono Bold", sans-serif;
+    font-size: 24px;
+}
+
+/* Containers  */
+
+main {
+    background-color: var(--light-grayish-cyan);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    width: 70%;
+    background-color: var(--white);
+    border-radius: 25px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.fields-container {
+    margin: 48px;
+    row-gap: 40px;
+}
+
+.amounts-container {
+    background-color: var(--very-dark-cyan);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 32px 32px 32px 0;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 41px;
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-container {
+    display: grid;
+    grid-auto-columns: 3fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 16px;
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    section {
+        width: 90%;
+    }
+
+    .buttons-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 810px) {
+    main {
+        .img-container {
+            height: 144px;
+        }
+    }
+
+    section {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px 25px 0 0;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    .fields-container {
+        padding: 32px 24px 32px 24px;
+        margin: 0;
+        row-gap: 32px;
+    }
+
+    .amounts-container {
+        margin: 0 0 32px 0;
+        width: 90%;
+    }
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+/* Inputs */
+
+input, p-inputNumber ::ng-deep input {
+    padding: 6px 17px;
+    background-color: var(--very-light-grayish-cyan);
+    background-repeat: no-repeat;
+    background-position: 17px center;
+    border-radius: 5px;
+    text-align: right;
+    border: none;
+    width: 100%
+}
+
+p-inputNumber {
+    padding: 0;
+    display: contents;
+}
+
+input[type=text], p-inputNumber ::ng-deep input{
+    color: var(--very-dark-cyan);
+}
+
+input[type=text]:focus, p-inputNumber ::ng-deep input:focus {
+    outline: solid 3px var(--strong-cyan);
+}
+
+.people-error ::ng-deep input, .people-error ::ng-deep input:focus{
+    outline: solid 3px var(--error);
+}
+
+#bill ::ng-deep input {
+    background-image: url('src/assets/images/calculator/icon-dollar.svg');
+    background-repeat: no-repeat;
+}
+
+#people ::ng-deep input {
+    background-image: url('src/assets/images/calculator/icon-person.svg');
+    background-repeat: no-repeat;
+}
+
+.button {
+    background-color: var(--very-dark-cyan);
+    border-radius: 5px;
+    color: var(--white);
+    padding: 6px 0;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button-focus {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.button:active {
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+}
+
+#custom ::ng-deep input, .button, .reset {
+    text-align: center;
+}
+
+.reset:disabled {
+    background-color: #0D686D;
+    color: var(--very-dark-cyan);
+    cursor: not-allowed;
+}
+
+
+/* Fonts */
+
+h1 {
+    font-family: "Space Mono", sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--white);
+    font-size: 16px;
+}
+
+h2 {
+    color: var(--strong-cyan);
+    font-size: 48px;
+    line-height: 71px;
+    font-weight: 400;
+}
+
+@media (max-width: 810px) {
+    h2 {
+
+        font-size: 32px;
+    }
+}
+
+.person {
+    font-family: "Space Mono", sans-serif;
+    font-weight: 700;
+    line-height: 19px;
+    color: var(--grayish-cyan);
+    font-size: 13px;
+}
+
+p-inputNumber ::ng-deep input {
+    line-height: 36px;
+}
+
+input[type=text]::placeholder, p-inputNumber ::ng-deep input::placeholder {
+    color: var(--grayish-cyan);
+}
+
+#custom ::ng-deep input::placeholder {
+    color: var(--very-dark-cyan);
+}
+
+label {
+    font-size: 16px;
+    color: var(--dark-grayish-cyan);
+}
+
+.error {
+    color: var(--error);
+    font-size: 16px;
+    line-height: 24px;
+}
