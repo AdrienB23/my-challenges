@@ -1,1 +1,57 @@
-<p>calculator works!</p>
+<main>
+  <div class="img-container">
+    <img src="assets/images/calculator/logo.svg" alt="logo">
+  </div>
+  <section>
+
+    <article class="fields-container">
+
+      <div class="field-container">
+        <div class="label-container">
+          <label for="bill">{{calculatorTrad.bill}}</label>
+        </div>
+        <p-inputNumber id="bill" inputId="bill" placeholder="0" locale="en-EN" [minFractionDigits]="0" [maxFractionDigits]="2" (onInput)="billInput.value ? this.bill = billInput.value : this.bill = 0" (onClear)="billInput.value = null" #billInput />
+      </div>
+
+      <div class="field-container">
+        <div class="label-container">
+          <label>{{calculatorTrad.select}} %</label>
+        </div>
+        <div class="buttons-container">
+          <input id="percentage-{{percentage}}" [class]="buttonPercentage === percentage ? 'button button-focus': 'button'" type="button" *ngFor="let percentage of percentages" value="{{percentage}}%" (click)="percentageClicked(percentage); customInput.clear()" />
+          <p-inputNumber id="custom" inputId="bill" suffix="%" placeholder="{{calculatorTrad.custom}}" [min]="0" [max]="100" (onInput)="customChange(customInput.value)" (onClear)="customInput.value = null" #customInput />
+        </div>
+      </div>
+
+      <div class="field-container">
+        <div class="label-container">
+          <label for="people" >{{calculatorTrad.number}}</label>
+          <p *ngIf="peopleError" class="error">{{calculatorTrad.error}}</p>
+        </div>
+        <p-inputNumber id="people" [class]="peopleError ? 'people-error' : ''" inputId="people" placeholder="0" [minFractionDigits]="0" (onInput)="peopleChange(peopleInput.value)" (onClear)="peopleInput.value = null" #peopleInput/>
+      </div>
+
+    </article>
+
+    <article class="amounts-container">
+      <div class="results-container">
+        <div class="result-container">
+          <div>
+            <h1>{{calculatorTrad.tip}}</h1>
+            <p class="person">{{calculatorTrad.person}}</p>
+          </div>
+          <h2>${{tipAmount}}</h2>
+        </div>
+        <div class="result-container">
+          <div>
+            <h1>{{calculatorTrad.total}}</h1>
+            <p class="person">{{calculatorTrad.person}}</p>
+          </div>
+          <h2>${{total}}</h2>
+        </div>
+      </div>
+      <input id="reset" class="reset button button-focus" type="reset" value="{{calculatorTrad.reset}}" [disabled]="this.resetDisabled" (click)="reset(billInput, peopleInput, customInput)">
+    </article>
+
+  </section>
+</main>

@@ -20,7 +20,8 @@ export class CalculatorTradService {
       tip: "",
       person: "",
       total: "",
-      reset: ""
+      reset: "",
+      error: ""
     }
     this.http.get(dataUrl + "calculator-trad.json")
       .subscribe({
@@ -33,6 +34,7 @@ export class CalculatorTradService {
           calculatorTrad.person = data[language].person;
           calculatorTrad.total = data[language].total;
           calculatorTrad.reset = data[language].reset;
+          calculatorTrad.error = data[language].error;
         },
         error: err => {
           console.log(err);

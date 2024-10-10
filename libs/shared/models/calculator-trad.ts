@@ -7,4 +7,5 @@ export interface CalculatorTrad {
   person: string;
   total: string;
   reset: string;
+  error: string;
 }
