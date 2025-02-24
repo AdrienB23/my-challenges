@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TimeTracking } from '../models/time-tracking';
 import { DataTimeTracking } from '../models/data-time-tracking';
-import { DataTime } from '../models/data-time';
 import { Observable } from 'rxjs';
 
 const dataUrl = 'assets/data/';
@@ -42,16 +41,6 @@ export class TimeTrackingService {
   }
 
   getData(): Observable<DataTimeTracking> {
-    const timeTrackingData: DataTimeTracking = {
-      data: [{
-        title: "",
-        timeframes: {
-          daily: {current: "", previous: ""},
-          weekly: {current: "", previous: ""},
-          monthly: {current: "", previous: ""},
-        }
-      }]
-    };
     return this.http.get<DataTimeTracking>(dataUrl + "time-tracking-values.json");
   }
 }
