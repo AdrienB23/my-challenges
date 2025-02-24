@@ -9,6 +9,7 @@ import {
 import { NewsletterFormGuardService } from '../../libs/shared/services/newsletter-form-guard.service';
 import { TimeTrackingComponent } from '@my-challenges/time-tracking';
 import { CalculatorComponent } from '@my-challenges/calculator';
+import { PasswordGeneratorComponent } from '@my-challenges/password-generator';
 
 export const appRoutes: Route[] = [{
         path:'',
@@ -44,5 +45,9 @@ export const appRoutes: Route[] = [{
         path: 'calculator/:language',
         title: 'Calculator App',
         component: CalculatorComponent,
+      }, {
+        path: 'password/:language',
+        title: 'Password Generator App',
+        component: PasswordGeneratorComponent,
       }
 ]
