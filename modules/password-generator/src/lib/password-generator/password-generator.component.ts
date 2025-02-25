@@ -15,6 +15,7 @@ import { Password } from '../../../../../libs/shared/models/password';
 export class PasswordGeneratorComponent implements OnInit {
   passwordText!: Password;
   language!: string;
+  password = "";
 
   constructor(
     private passwordService: PasswordService,
