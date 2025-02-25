@@ -25,6 +25,11 @@
   src: url('assets/fonts/SpaceMono/SpaceMono-Bold.ttf');
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('assets/fonts/JetBrainsMono/JetBrainsMono-VariableFont_wght.ttf');
+}
+
 /* Colors */
 
 :root {
@@ -41,7 +46,7 @@
   --tomato: hsl(4, 100%, 67%);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
-  --grey: hsl(231, 7%, 60%);
+  --newsletter-grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
 
   /* Time Tracking */
@@ -68,6 +73,17 @@
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --light-cyan: #9FE8DF;
   --error: #E17457;
+
+  /* Password */
+
+  --red: #F64A4A ;
+  --orange: #FB7C58;
+  --yellow: #F8CD65;
+  --neon-green: #A4FFAF;
+  --almost-white: #E6E5EA;
+  --password-grey: #817D92;
+  --dark-grey: #24232C;
+  --very-dark-grey: #18171F;
 }
 
 * {
