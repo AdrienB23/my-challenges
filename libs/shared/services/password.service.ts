@@ -16,7 +16,10 @@ export class PasswordService {
       characters: "",
       types: [],
       strength: "",
-      generate: ""
+      strengthTypes: [],
+      generate: "",
+      error: "",
+      copy: ""
     }
     this.http.get(dataUrl + "password-trad.json")
       .subscribe({
@@ -25,7 +28,10 @@ export class PasswordService {
           passwordTexts.characters = data[language].characters;
           passwordTexts.types = data[language].types;
           passwordTexts.strength = data[language].strength;
+          passwordTexts.strengthTypes = data[language].strengthTypes;
           passwordTexts.generate = data[language].generate;
+          passwordTexts.error = data[language].error;
+          passwordTexts.copy = data[language].copy;
         },
         error: err => {
           console.log(err);

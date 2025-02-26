@@ -3,5 +3,8 @@ export interface Password {
   characters: string;
   types: string[];
   strength: string;
+  strengthTypes: string[];
   generate: string;
+  error: string;
+  copy: string;
 }
