@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { PasswordService } from '../../../../../libs/shared/services/password.service';
@@ -27,11 +27,14 @@ export class PasswordGeneratorComponent implements OnInit {
     {key: "s", name: "Symboles", value: false}
   ];
   strength = 0;
+  screenWidth!: number;
 
   constructor(
     private passwordService: PasswordService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
     this.route.paramMap
@@ -44,6 +47,11 @@ export class PasswordGeneratorComponent implements OnInit {
         this.passwordText = this.passwordService.getTrad(this.language);
         console.log(this.passwordText);
       });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
   }
 
   copyToClipboard() {
