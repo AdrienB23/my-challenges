@@ -85,7 +85,7 @@ input {
 }
 
 .email {
-    border: solid 1px var(--grey);
+    border: solid 1px var(--newsletter-grey);
 }
 
 .email-error, .email-error:focus {
@@ -106,7 +106,7 @@ input {
 
 .submit:hover,.submit:active  {
     background: linear-gradient(to right, #FF537B 0%, #FE6A3C 100%);
-    box-shadow: 0px 5px 25px 8px rgba(255, 98, 87, 0.27);
+    box-shadow: 0 5px 25px 8px rgba(255, 98, 87, 0.27);
 }
 
 /* Fonts */
