@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NewsletterForm } from '../models/newsletter-form';
-import { Success } from '../models/success';
+import { NewsletterFormText } from '../models/newsletter-form-text';
+import { NewsletterSuccessText } from '../models/newsletter-success-text';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class NewsletterService {
 
   constructor(private http: HttpClient) { }
 
-  getForm(): NewsletterForm {
-    const form: NewsletterForm = {title: "", stats: "", updates: [], subscribe: "", email: "", error: "", example: ""};
+  getForm(): NewsletterFormText {
+    const form: NewsletterFormText = {title: "", stats: "", updates: [], subscribe: "", email: "", error: "", example: ""};
     this.http.get(this.newsletterUrl).subscribe(
       data => {
         form.title = (data as any).form.title;
@@ -27,8 +27,8 @@ export class NewsletterService {
     return form;
   }
 
-  getSuccess(): Success {
-    const success: Success =  {title: "", confirmation1: "", confirmation2: "", dismiss: ""};
+  getSuccess(): NewsletterSuccessText {
+    const success: NewsletterSuccessText =  {title: "", confirmation1: "", confirmation2: "", dismiss: ""};
     this.http.get(this.newsletterUrl).subscribe(
       data => {
         success.title = (data as any).success.title;

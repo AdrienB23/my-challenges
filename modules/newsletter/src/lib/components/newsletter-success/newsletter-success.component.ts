@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { NewsletterService } from '../../../../../../libs/shared/services/newsletter.service';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { Success } from '../../../../../../libs/shared/models/success';
+import { NewsletterSuccessText } from '../../../../../../libs/shared/models/newsletter-success-text';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './newsletter-success.component.css',
 })
 export class NewsletterSuccessComponent implements OnInit {
-  success!: Success;
+  success!: NewsletterSuccessText;
 
   constructor(private newsletterService: NewsletterService, private router: Router) {
   }

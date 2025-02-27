@@ -1,4 +1,4 @@
-export interface CalculatorTrad {
+export interface CalculatorText {
   bill: string;
   select: string;
   custom: string;

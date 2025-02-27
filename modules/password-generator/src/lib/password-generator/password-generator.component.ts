@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { PasswordService } from '../../../../../libs/shared/services/password.service';
 import { switchMap } from 'rxjs';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { Password } from '../../../../../libs/shared/models/password';
+import { PasswordText } from '../../../../../libs/shared/models/password-text';
 
 @Component({
   selector: 'lib-password-generator',
@@ -13,7 +13,7 @@ import { Password } from '../../../../../libs/shared/models/password';
   styleUrl: './password-generator.component.css',
 })
 export class PasswordGeneratorComponent implements OnInit {
-  passwordText!: Password;
+  passwordText!: PasswordText;
   language!: string;
   password = "";
   copySuccess = false;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Password } from '../models/password';
+import { PasswordText } from '../models/password-text';
 
 const dataUrl = 'assets/data/';
 
@@ -10,8 +10,8 @@ const dataUrl = 'assets/data/';
 export class PasswordService {
   constructor(private http: HttpClient) {}
 
-  getTrad(language: string): Password {
-    const passwordTexts: Password = {
+  getTrad(language: string): PasswordText {
+    const passwordTexts: PasswordText = {
       title: "",
       characters: "",
       types: [],

@@ -1,4 +1,4 @@
-export interface NewsletterForm {
+export interface NewsletterFormText {
   title: string,
   stats: string,
   updates: string[],
