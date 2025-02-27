@@ -10,6 +10,7 @@ import { TimeTrackingModule } from '@my-challenges/time-tracking';
 import { NewsletterModule } from '@my-challenges/newsletter';
 import { CalculatorModule } from '@my-challenges/calculator';
 import { PasswordGeneratorModule } from '@my-challenges/password-generator';
+import { QuizAppModule } from '@my-challenges/quiz-app';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PasswordGeneratorModule } from '@my-challenges/password-generator';
     TimeTrackingModule,
     CalculatorModule,
     PasswordGeneratorModule,
+    QuizAppModule,
   ],
   providers: [
     provideRouter(appRoutes, withHashLocation()),
