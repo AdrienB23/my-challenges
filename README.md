@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/screen1.png)
+![](design/password-generator/screen1.png)
 
 ### Links
 

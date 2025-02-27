@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title1": "Welcome to the",
+    "title2": "Frontend Quiz!",
+    "subject": "Pick a subject to get started.",
+    "html": "HTML",
+    "css": "CSS",
+    "js": "Javascript",
+    "accessibility": "Accessibility",
+    "question": "Question",
+    "of": "of",
+    "submit": "Submit Answer",
+    "complete": "Quiz completed",
+    "score": "You scored...",
+    "out_of": "out of",
+    "play": "Play Again"
+  }
+}
