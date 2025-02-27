@@ -1,4 +1,4 @@
-export interface Password {
+export interface PasswordText {
   title: string;
   characters: string;
   types: string[];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { Article } from '../../../../../libs/shared/models/article';
+import { ArticleText } from '../../../../../libs/shared/models/article-text';
 import { HostListener } from "@angular/core";
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { ArticleService } from '../../../../../libs/shared/services/article.service';
@@ -12,7 +12,7 @@ import { ArticleService } from '../../../../../libs/shared/services/article.serv
 })
 
 export class ArticlePreviewComponent implements OnInit {
-  articles: Article [] = [];
+  articles: ArticleText [] = [];
   shareHover: boolean[] = [];
   shareClick: boolean[] = [];
   screenHeight!: number;

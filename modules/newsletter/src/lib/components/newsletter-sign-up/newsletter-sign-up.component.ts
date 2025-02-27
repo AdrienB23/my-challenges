@@ -1,6 +1,6 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { NewsletterForm } from '../../../../../../libs/shared/models/newsletter-form';
+import { NewsletterFormText } from '../../../../../../libs/shared/models/newsletter-form-text';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { NewsletterService } from '../../../../../../libs/shared/services/newsletter.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './newsletter-sign-up.component.css',
 })
 export class NewsletterSignUpComponent implements OnInit{
-  form!: NewsletterForm;
+  form!: NewsletterFormText;
   screenHeight!: number;
   screenWidth!: number;
   mobile = false;

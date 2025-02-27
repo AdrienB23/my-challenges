@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CalculatorTrad } from '../models/calculator-trad';
+import { CalculatorText } from '../models/calculator-text';
 
 const dataUrl = 'assets/data/';
 
@@ -11,8 +11,8 @@ export class CalculatorTradService {
 
   constructor(private http: HttpClient) {}
 
-  getTrad(language: string): CalculatorTrad {
-    const calculatorTrad: CalculatorTrad = {
+  getTrad(language: string): CalculatorText {
+    const calculatorTrad: CalculatorText = {
       bill: "",
       select: "",
       custom: "",

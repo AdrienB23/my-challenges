@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TimeTracking } from '../models/time-tracking';
+import { TimeTrackingText } from '../models/time-tracking-text';
 import { DataTimeTracking } from '../models/data-time-tracking';
 import { Observable } from 'rxjs';
 
@@ -13,8 +13,8 @@ export class TimeTrackingService {
 
   constructor(private http: HttpClient) {}
 
-  getTrad(language: string): TimeTracking {
-    const timeTrackingTexts: TimeTracking = {
+  getTrad(language: string): TimeTrackingText {
+    const timeTrackingTexts: TimeTrackingText = {
       report: "",
       profile: "",
       timeList: [],

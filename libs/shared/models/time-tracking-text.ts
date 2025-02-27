@@ -1,4 +1,4 @@
-export interface TimeTracking {
+export interface TimeTrackingText {
   report: string;
   profile: string;
   timeList: string[];

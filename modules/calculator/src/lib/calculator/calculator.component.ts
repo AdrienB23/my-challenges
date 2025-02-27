@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { CalculatorTrad } from '../../../../../libs/shared/models/calculator-trad';
+import { CalculatorText } from '../../../../../libs/shared/models/calculator-text';
 import { switchMap } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 // eslint-disable-next-line @nx/enforce-module-boundaries
@@ -14,7 +14,7 @@ import { InputNumber } from 'primeng/inputnumber';
   styleUrl: './calculator.component.css',
 })
 export class CalculatorComponent implements OnInit {
-  calculatorTrad!: CalculatorTrad
+  calculatorTrad!: CalculatorText
   language!: string;
   bill = 0;
   people: number|null = 0;

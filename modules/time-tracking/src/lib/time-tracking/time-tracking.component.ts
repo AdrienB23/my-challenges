@@ -2,8 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { TimeTrackingService } from '../../../../../libs/shared/services/time-tracking.service';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { TimeTracking } from '../../../../../libs/shared/models/time-tracking';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { TimeTrackingText } from '../../../../../libs/shared/models/time-tracking-text';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { DataTimeTracking } from '../../../../../libs/shared/models/data-time-tracking';
@@ -16,7 +16,7 @@ import { DataTime } from '../../../../../libs/shared/models/data-time';
   styleUrl: './time-tracking.component.css'
 })
 export class TimeTrackingComponent implements OnInit {
-  text!: TimeTracking;
+  text!: TimeTrackingText;
   language!: string;
   time = 1;
   timeData: DataTimeTracking = {
@@ -54,7 +54,7 @@ export class TimeTrackingComponent implements OnInit {
           this.language = params.get('language')!
         )
       )
-      .subscribe(language => {
+      .subscribe(() => {
         this.text = this.timeTrackingService.getTrad(this.language);
       });
 

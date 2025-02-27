@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../models/article';
+import { ArticleText } from '../models/article-text';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,11 +10,11 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {  }
 
-  getArticles(): Article[] {
-    const articles: Article[] = []
+  getArticles(): ArticleText[] {
+    const articles: ArticleText[] = []
     this.http.get(this.articleUrl).subscribe(
       data => {
-        (data as any).articles.forEach((article: Article) => {
+        (data as any).articles.forEach((article: ArticleText) => {
           articles.push(article);
         })
         console.log((data as any).articles);
