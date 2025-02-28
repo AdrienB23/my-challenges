@@ -1,11 +1,9 @@
 export interface QuizAppText {
+  language: string;
   title1: string;
   title2: string;
   subject: string;
-  html: string;
-  css: string;
-  js: string;
-  accessibility: string;
+  types: string[];
   question: string;
   of: string;
   submit: string;

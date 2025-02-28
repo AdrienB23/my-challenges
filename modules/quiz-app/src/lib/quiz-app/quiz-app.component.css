@@ -1,0 +1,67 @@
+main * {
+  font-family: "Rubik", sans-serif;
+  color: var(--dark-navy);
+}
+
+/* Fonts */
+
+.display {
+  font-size: 144px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.heading-l {
+  font-size: 64px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.heading-m {
+  font-size: 36px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.heading-s {
+  font-size: 28px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.body-m, .body-s {
+  line-height: 150%;
+  font-weight: 300;
+}
+
+.body-m {
+  font-size: 24px;
+}
+
+.body-s {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.regular {
+  font-weight: 300;
+}
+
+/* Containers */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--light-grey);
+  background-image: url("src/assets/images/quiz-app/pattern-background-desktop-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-container {
+  display: flex;
+  margin: 0 140px;
+}

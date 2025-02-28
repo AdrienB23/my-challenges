@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../../../../../libs/shared/services/quiz.service';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { QuizAppText } from '../../../../../libs/shared/models/quiz-app-text';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { DataQuizApp } from '../../../../../libs/shared/models/data-quiz-app';
 
 @Component({
   selector: 'lib-quiz-app',
@@ -12,10 +14,34 @@ import { QuizAppText } from '../../../../../libs/shared/models/quiz-app-text';
 })
 export class QuizAppComponent implements OnInit {
   quizText!: QuizAppText;
+  questions!: DataQuizApp;
 
   constructor(private quizService: QuizService) {}
 
   ngOnInit() {
-    this.quizText = this.quizService.getTrad("en");
+    this.getText();
+    this.getQuestions();
+  }
+
+  getText() {
+    this.quizService.getTrad().subscribe(
+      data => {
+        data.forEach(text =>  {
+          if (text.language === "en") {
+            this.quizText = text;
+          }
+        });
+        console.log(this.quizText);
+      }
+    )
+  }
+
+  getQuestions() {
+    this.quizService.getData().subscribe(
+      data => {
+        this.questions = data;
+        console.log(this.questions);
+      }
+    )
   }
 }

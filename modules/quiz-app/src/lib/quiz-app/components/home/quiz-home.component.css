@@ -1,0 +1,24 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+button {}

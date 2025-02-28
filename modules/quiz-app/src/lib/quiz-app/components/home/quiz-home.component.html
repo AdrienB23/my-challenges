@@ -1,0 +1,12 @@
+<div class="home-container">
+  <div class="text-container">
+    <div class="title-container">
+      <h1 class="heading-l regular">{{quizText.title1}}</h1>
+      <h2 class="heading-l">{{quizText.title2}}</h2>
+    </div>
+    <span class="body-s">{{quizText.subject}}</span>
+  </div>
+  <div class="buttons-container">
+    <button pButton *ngFor="let type of quizText.types" class="basic-button">{{type}}</button>
+  </div>
+</div>
