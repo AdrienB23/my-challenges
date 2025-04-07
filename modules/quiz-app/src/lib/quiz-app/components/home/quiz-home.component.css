@@ -1,6 +1,7 @@
 .home-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .text-container {
@@ -19,6 +20,40 @@
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+  width: 50%;
 }
 
-button {}
+.basic-button {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 32px;
+  padding: 20px;
+  background-color: var(--pure-white);
+  outline: none;
+  border: none;
+  border-radius: 27px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.icon-container {
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.theme-html {
+  background-color: #FFF1E9;
+}
+
+.theme-css {
+  background-color: #E0FDEF;
+}
+
+.theme-javascript {
+  background-color: #EBF0FF;
+}
+
+.theme-accessibility {
+  background-color: #F6E7FF;
+}

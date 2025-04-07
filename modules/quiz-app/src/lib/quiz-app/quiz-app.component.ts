@@ -40,7 +40,7 @@ export class QuizAppComponent implements OnInit {
     this.quizService.getData().subscribe(
       data => {
         this.questions = data;
-        console.log(this.questions);
+        console.log("Raw data:", data);
       }
     )
   }

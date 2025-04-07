@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { QuizAppText } from '../../../../../../../libs/shared/models/quiz-app-text';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { DataQuizApp } from '../../../../../../../libs/shared/models/data-quiz-app';
 
 @Component({
   selector: 'lib-quiz-home',
@@ -10,6 +12,5 @@ import { QuizAppText } from '../../../../../../../libs/shared/models/quiz-app-te
 })
 export class QuizHomeComponent {
   @Input() quizText!: QuizAppText;
-
-
+  @Input() questions!: DataQuizApp;
 }

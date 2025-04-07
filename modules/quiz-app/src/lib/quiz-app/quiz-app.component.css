@@ -1,4 +1,4 @@
-main * {
+main *, button * {
   font-family: "Rubik", sans-serif;
   color: var(--dark-navy);
 }
@@ -63,5 +63,12 @@ main {
 
 .content-container {
   display: flex;
+  width: 100%;
+  justify-content: center;
   margin: 0 140px;
+}
+
+.main-container, lib-quiz-home {
+  display: flex;
+  width: 100%;
 }
