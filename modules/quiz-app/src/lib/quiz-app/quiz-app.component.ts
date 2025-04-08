@@ -15,6 +15,7 @@ import { DataQuizApp } from '../../../../../libs/shared/models/data-quiz-app';
 export class QuizAppComponent implements OnInit {
   quizText!: QuizAppText;
   questions!: DataQuizApp;
+  isDark!: boolean;
 
   constructor(private quizService: QuizService) {}
 

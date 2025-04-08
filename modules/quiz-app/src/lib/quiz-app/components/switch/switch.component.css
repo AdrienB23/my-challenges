@@ -1,0 +1,32 @@
+::ng-deep .p-inputswitch {
+  width: 48px;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+::ng-deep .p-inputswitch .p-inputswitch-slider {
+  background: var(--purple);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, outline-color 0.2s;
+  border-radius: 30px;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+}
+
+::ng-deep .p-inputswitch .p-hidden-accessible input {
+  transform: scale(0);
+}
+
+::ng-deep .p-inputswitch .p-inputswitch-slider::before {
+  background: #ffffff;
+  width: 20px;
+  height: 20px;
+  left: 4px;
+  margin-top: -10px;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider::before {
+  transform: translateX(20px);
+}

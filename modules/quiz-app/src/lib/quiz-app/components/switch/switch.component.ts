@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './switch.component.css',
 })
 export class SwitchComponent {
-  @Input() isDarkMode = false;
-  @Output() isDarkModeChange = new EventEmitter<boolean>();
+  @Input() isDark = false;
+  @Output() isDarkChange = new EventEmitter<boolean>();
 
   toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    this.isDarkModeChange.emit(this.isDarkMode);
+    this.isDark = !this.isDark;
+    this.isDarkChange.emit(this.isDark);
   }
 }

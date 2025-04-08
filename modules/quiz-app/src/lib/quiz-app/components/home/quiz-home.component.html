@@ -1,4 +1,4 @@
-<div class="home-container">
+<div class="home-container ">
   <div class="text-container">
     <div class="title-container">
       <h1 class="heading-l regular">{{quizText.title1}}</h1>
@@ -7,7 +7,7 @@
     <span class="body-s">{{quizText.subject}}</span>
   </div>
   <div class="buttons-container">
-    <button pButton *ngFor="let type of quizText.types; let i = index" class="basic-button">
+    <button pButton *ngFor="let type of quizText.types; let i = index" class="basic-button {{isDark ? 'dark-mode' : ''}}">
       <div class="icon-container theme-{{type.toLowerCase()}}">
         <img src="{{questions.quizzes[i].icon}}" alt="{{type}}" />
       </div>

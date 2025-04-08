@@ -13,4 +13,5 @@ import { DataQuizApp } from '../../../../../../../libs/shared/models/data-quiz-a
 export class QuizHomeComponent {
   @Input() quizText!: QuizAppText;
   @Input() questions!: DataQuizApp;
+  @Input() isDark!: boolean;
 }
