@@ -30,3 +30,10 @@
 ::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider::before {
   transform: translateX(20px);
 }
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
