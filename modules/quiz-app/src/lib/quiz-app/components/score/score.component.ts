@@ -3,11 +3,11 @@ import { QuizAppText } from '../../../../../../../libs/shared/models/quiz/quiz-a
 import { DataQuizApp } from '../../../../../../../libs/shared/models/quiz/data-quiz-app';
 
 @Component({
-  selector: 'lib-questions',
-  templateUrl: './questions.component.html',
-  styleUrl: './questions.component.css',
+  selector: 'lib-score',
+  templateUrl: './score.component.html',
+  styleUrl: './score.component.css',
 })
-export class QuestionsComponent {
+export class ScoreComponent {
   constructor(
     @Inject('quizText') public quizText: QuizAppText,
     @Inject('questions') public questions: DataQuizApp,

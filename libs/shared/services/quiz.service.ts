@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { DataQuizApp } from '../models/data-quiz-app';
-import { QuizAppText } from '../models/quiz-app-text';
+import { DataQuizApp } from '../models/quiz/data-quiz-app';
+import { QuizAppText } from '../models/quiz/quiz-app-text';
 
 const dataUrl = 'assets/data/';
 

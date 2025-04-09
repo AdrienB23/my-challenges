@@ -1,5 +1,5 @@
 <div class="switch-container">
-  <img src="assets/images/quiz/icon-sun-{{isDark ? 'light' : 'dark'}}.svg" alt="Sun Icon"/>
+  <img [src]="'assets/images/quiz/icon-sun-' + (isDark ? 'light' : 'dark') + '.svg'" alt="Sun Icon"/>
   <p-inputSwitch (onChange)="toggleDarkMode()"/>
-  <img src="assets/images/quiz/icon-moon-{{isDark ? 'light' : 'dark'}}.svg" alt="Moon Icon"/>
+  <img [src]="'assets/images/quiz/icon-moon-' + (isDark ? 'light' : 'dark') + '.svg'" alt="Moon Icon"/>
 </div>

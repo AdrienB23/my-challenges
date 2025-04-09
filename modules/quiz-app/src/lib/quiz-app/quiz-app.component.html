@@ -4,7 +4,7 @@
       <lib-switch [(isDark)]="isDark"></lib-switch>
     </div>
     <div class="main-container">
-      <lib-quiz-home [quizText]="quizText" [questions]="questions" [isDark]="isDark"></lib-quiz-home>
+      <div *ngIf="quizText && questions && currentComponent" [ngComponentOutlet]="currentComponent" [ngComponentOutletInjector]="customInjector" ></div>
     </div>
   </div>
 </main>

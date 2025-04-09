@@ -1,9 +1,3 @@
-.home-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .text-container {
   display: flex;
   flex-direction: column;

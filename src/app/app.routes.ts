@@ -10,7 +10,7 @@ import { NewsletterFormGuardService } from '../../libs/shared/services/newslette
 import { TimeTrackingComponent } from '@my-challenges/time-tracking';
 import { CalculatorComponent } from '@my-challenges/calculator';
 import { PasswordGeneratorComponent } from '@my-challenges/password-generator';
-import { QuizAppComponent, QuizHomeComponent } from '@my-challenges/quiz-app';
+import { QuizAppComponent } from '@my-challenges/quiz-app';
 
 export const appRoutes: Route[] = [{
         path:'',
@@ -51,13 +51,8 @@ export const appRoutes: Route[] = [{
         title: 'Password Generator App',
         component: PasswordGeneratorComponent,
       }, {
-        path: 'quiz-app',
+        path: 'quiz-app/:language',
         title: 'Quiz App',
         component: QuizAppComponent,
-        children: [{
-          path: 'home/:language',
-          title: 'Quiz Home',
-          component: QuizHomeComponent,
-        }]
       }
 ]

@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-// eslint-disable-next-line @nx/enforce-module-boundaries
+import { Component, Injector, OnInit } from '@angular/core';
 import { QuizService } from '../../../../../libs/shared/services/quiz.service';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { QuizAppText } from '../../../../../libs/shared/models/quiz-app-text';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { DataQuizApp } from '../../../../../libs/shared/models/data-quiz-app';
+import { QuizAppText } from '../../../../../libs/shared/models/quiz/quiz-app-text';
+import { DataQuizApp } from '../../../../../libs/shared/models/quiz/data-quiz-app';
+import { PageStateEnum } from '../../../../../libs/shared/models/quiz/page-state-enum';
+import { StartMenuComponent } from './components/start-menu/start-menu.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { ScoreComponent } from './components/score/score.component';
+import { ThemeEnum } from '../../../../../libs/shared/models/quiz/theme-enum';
 
 @Component({
   selector: 'lib-quiz-app',
@@ -16,8 +18,19 @@ export class QuizAppComponent implements OnInit {
   quizText!: QuizAppText;
   questions!: DataQuizApp;
   isDark!: boolean;
+  themeSelected?: ThemeEnum;
 
-  constructor(private quizService: QuizService) {}
+  pageState: PageStateEnum = PageStateEnum.START_MENU;
+  componentMap = {
+    [PageStateEnum.START_MENU]: StartMenuComponent,
+    [PageStateEnum.QUESTIONS]: QuestionsComponent,
+    [PageStateEnum.SCORE]: ScoreComponent
+  };
+
+  constructor(
+    private quizService: QuizService,
+    private injector: Injector
+  ) {}
 
   ngOnInit() {
     this.getText();
@@ -45,4 +58,23 @@ export class QuizAppComponent implements OnInit {
       }
     )
   }
+
+  get currentComponent() {
+    return this.componentMap[this.pageState];
+  }
+
+  get customInjector() {
+    return Injector.create({
+      providers: [
+        { provide: 'quizText', useValue: this.quizText },
+        { provide: 'questions', useValue: this.questions },
+        { provide: 'isDark', useValue: this.isDark },
+        { provide: 'themeSelected', useValue: this.themeSelected },
+        { provide: 'pageState', useValue: this.pageState },
+      ],
+      parent: this.injector
+    });
+  }
+
+  protected readonly PageStateEnum = PageStateEnum;
 }
