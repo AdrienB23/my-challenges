@@ -16,7 +16,7 @@ import { ThemeEnum } from '../../../../../libs/shared/models/quiz/theme-enum';
 })
 export class QuizAppComponent implements OnInit {
   quizText!: QuizAppText;
-  questions!: DataQuizApp;
+  quizData!: DataQuizApp;
   isDark!: boolean;
   themeSelected?: ThemeEnum;
 
@@ -53,7 +53,7 @@ export class QuizAppComponent implements OnInit {
   getQuestions() {
     this.quizService.getData().subscribe(
       data => {
-        this.questions = data;
+        this.quizData = data;
         console.log("Raw data:", data);
       }
     )
@@ -67,13 +67,30 @@ export class QuizAppComponent implements OnInit {
     return Injector.create({
       providers: [
         { provide: 'quizText', useValue: this.quizText },
-        { provide: 'questions', useValue: this.questions },
+        { provide: 'quizData', useValue: this.quizData },
         { provide: 'isDark', useValue: this.isDark },
         { provide: 'themeSelected', useValue: this.themeSelected },
-        { provide: 'pageState', useValue: this.pageState },
+        { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
       ],
       parent: this.injector
     });
+  }
+
+  onThemeSelected(theme: string) {
+    switch (theme) {
+      case 'HTML':
+        this.themeSelected = ThemeEnum.HTML;
+        break;
+      case 'CSS':
+        this.themeSelected = ThemeEnum.CSS;
+        break;
+      case 'Javascript':
+        this.themeSelected = ThemeEnum.JS;
+        break;
+      case 'Accessibility':
+        this.themeSelected = ThemeEnum.ACCESSIBILITY;
+    }
+    this.pageState = PageStateEnum.QUESTIONS;
   }
 
   protected readonly PageStateEnum = PageStateEnum;

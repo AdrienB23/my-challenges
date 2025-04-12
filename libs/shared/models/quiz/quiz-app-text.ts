@@ -5,6 +5,7 @@ export interface QuizAppText {
   subject: string;
   types: string[];
   question: string;
+  questions: string;
   of: string;
   submit: string;
   complete: string;

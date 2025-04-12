@@ -1,17 +1,28 @@
-<!--<div class="home-container ">-->
-<!--  <div class="text-container">-->
-<!--    <div class="title-container">-->
-<!--      <h1 class="heading-l">{{quizText.title1}}</h1>-->
-<!--      <h2 class="heading-l">{{quizText.title2}}</h2>-->
-<!--    </div>-->
-<!--    <span class="body-s">{{quizText.subject}}</span>-->
-<!--  </div>-->
-<!--  <div class="buttons-container">-->
-<!--    <button pButton *ngFor="let type of quizText.types; let i = index" class="basic-button {{isDark ? 'dark-mode' : ''}}" (click)="goToQuiz(type)" >-->
-<!--      <div class="icon-container theme-{{type.toLowerCase()}}">-->
-<!--        <img src="{{questions.quizzes[i].icon}}" alt="{{type}}" />-->
-<!--      </div>-->
-<!--      <h3 class="heading-s">{{type}}</h3>-->
-<!--    </button>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="main-component">
+  <div class="text-container">
+    <span
+      class="body-s {{isDark ? 'dark-mode' : ''}}">{{ quizText.questions + " " + questionNumber + " " + quizText.of + " " + 10 }}</span>
+    <div class="title-container">
+      <h1 class="heading-m">{{ quizData.quizzes[themeSelected!].questions[0].question }}</h1>
+    </div>
+    <div class="progress-bar-container {{isDark ? 'dark-mode' : ''}}">
+      <div [style]="'width: ' + questionNumber*10 + '%;'" class="progress"></div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <button (click)="selectAnswer(answer)"
+            *ngFor="let answer of quizData.quizzes[themeSelected!].questions[0].options; let i = index"
+            class="basic-button {{isDark ? 'dark-mode' : ''}}"
+            pButton>
+      <div [style]="selectedAnswer === answer ? 'background-color: var(--purple);' : ''" class="icon-answer">
+        <span
+          [style]="selectedAnswer === answer ? 'color: var(--pure-white) !important;' : ''"
+          class="heading-s">{{ "ABCD"[i] }}</span>
+      </div>
+      <h3 class="heading-s">{{ answer }}</h3>
+    </button>
+    <button class="important-button" pButton>
+      <span class="heading-s">{{ quizText.submit }}</span>
+    </button>
+  </div>
+</div>

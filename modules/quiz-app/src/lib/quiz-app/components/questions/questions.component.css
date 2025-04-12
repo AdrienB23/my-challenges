@@ -1,0 +1,43 @@
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    width: 50%;
+}
+
+.icon-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--light-grey);
+    width: 56px;
+    height: 56px;
+}
+
+.icon-answer span {
+    width: 56px;
+    color: var(--grey-navy) !important;
+}
+
+.progress-bar-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    background-color: var(--pure-white);
+    height: 16px;
+    border-radius: 100px;
+    padding: 0 4px;
+}
+
+.progress-bar-container.dark-mode {
+    background-color: var(--navy);
+}
+
+.progress {
+    background-color: var(--purple);
+    width: 100%;
+    height: 8px;
+    border-radius: 100px;
+}
