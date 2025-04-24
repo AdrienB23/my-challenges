@@ -19,6 +19,7 @@ export class QuizAppComponent implements OnInit {
   quizData!: DataQuizApp;
   isDark!: boolean;
   themeSelected?: ThemeEnum;
+  selectedAnswer: string | null = null;
 
   pageState: PageStateEnum = PageStateEnum.START_MENU;
   componentMap = {
@@ -71,6 +72,9 @@ export class QuizAppComponent implements OnInit {
         { provide: 'isDark', useValue: this.isDark },
         { provide: 'themeSelected', useValue: this.themeSelected },
         { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
+        { provide: 'selectedAnswer', useValue: this.selectedAnswer },
+        { provide: 'onAnswerSelected', useValue: this.onAnswerSelected.bind(this) },
+        { provide: 'questionNumber', useValue: this.questionNumber },
       ],
       parent: this.injector
     });
@@ -91,6 +95,10 @@ export class QuizAppComponent implements OnInit {
         this.themeSelected = ThemeEnum.ACCESSIBILITY;
     }
     this.pageState = PageStateEnum.QUESTIONS;
+  }
+
+  onAnswerSelected(answer: string | null) {
+    this.selectedAnswer = answer;
   }
 
   protected readonly PageStateEnum = PageStateEnum;

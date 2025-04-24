@@ -20,6 +20,18 @@
     color: var(--grey-navy) !important;
 }
 
+.button-focus {
+    border: solid 3px var(--purple) !important;
+}
+
+.button-focus .icon-answer {
+    background-color: var(--purple);
+}
+
+.button-focus .icon-answer span {
+    color: var(--pure-white) !important;
+}
+
 .progress-bar-container {
     display: flex;
     justify-content: start;

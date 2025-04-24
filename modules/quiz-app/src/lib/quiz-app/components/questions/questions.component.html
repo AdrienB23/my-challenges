@@ -3,25 +3,24 @@
     <span
       class="body-s {{isDark ? 'dark-mode' : ''}}">{{ quizText.questions + " " + questionNumber + " " + quizText.of + " " + 10 }}</span>
     <div class="title-container">
-      <h1 class="heading-m">{{ quizData.quizzes[themeSelected!].questions[0].question }}</h1>
+      <h1 class="heading-m">{{ quizData.quizzes[themeSelected!].questions[questionNumber - 1].question }}</h1>
     </div>
     <div class="progress-bar-container {{isDark ? 'dark-mode' : ''}}">
       <div [style]="'width: ' + questionNumber*10 + '%;'" class="progress"></div>
     </div>
   </div>
   <div class="buttons-container">
-    <button (click)="selectAnswer(answer)"
-            *ngFor="let answer of quizData.quizzes[themeSelected!].questions[0].options; let i = index"
-            class="basic-button {{isDark ? 'dark-mode' : ''}}"
-            pButton>
-      <div [style]="selectedAnswer === answer ? 'background-color: var(--purple);' : ''" class="icon-answer">
-        <span
-          [style]="selectedAnswer === answer ? 'color: var(--pure-white) !important;' : ''"
-          class="heading-s">{{ "ABCD"[i] }}</span>
+    <button
+      *ngFor="let answer of quizData.quizzes[themeSelected!].questions[questionNumber - 1].options; let i = index"
+      [class]="'basic-button' + (selectedAnswer === answer ? ' button-focus' : '') + (isDark ? ' dark-mode' : '')"
+      (click)="selectAnswer(answer)"
+      pButton>
+      <div class="icon-answer">
+        <span class="heading-s">{{ "ABCD"[i] }}</span>
       </div>
       <h3 class="heading-s">{{ answer }}</h3>
     </button>
-    <button class="important-button" pButton>
+    <button class="important-button" pButton (click)="submitAnswer()">
       <span class="heading-s">{{ quizText.submit }}</span>
     </button>
   </div>

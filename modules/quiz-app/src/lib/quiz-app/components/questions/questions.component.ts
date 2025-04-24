@@ -10,19 +10,25 @@ import { ThemeEnum } from '../../../../../../../libs/shared/models/quiz/theme-en
 })
 export class QuestionsComponent {
 
-  questionNumber = 1;
-
-  selectedAnswer: string | undefined;
-
   constructor(
     @Inject('quizText') public quizText: QuizAppText,
     @Inject('quizData') public quizData: DataQuizApp,
     @Inject('isDark') public isDark: boolean,
     @Inject('themeSelected') public themeSelected: undefined | ThemeEnum,
+    @Inject('selectedAnswer') public selectedAnswer: string | null,
+    @Inject('onAnswerSelected') public onAnswerSelected: (answer: string | null) => void,
+    @Inject('questionNumber') public questionNumber: number,
+    @Inject('onSubmittedAnswer') public onSubmittedAnswer: (newQuestionNumber: number) => void,
   ) {}
 
   selectAnswer(answer: string) {
-    this.selectedAnswer = answer;
+    if (this.selectedAnswer === answer) {
+      this.selectedAnswer = null;
+      this.onAnswerSelected(null);
+    } else {
+      this.selectedAnswer = answer;
+      this.onAnswerSelected(answer);
+    }
   }
 
 }
