@@ -14,6 +14,8 @@
     "questions": "Questions",
     "of": "of",
     "submit": "Submit Answer",
+    "next": "Next Question",
+    "error": "Please select an answer",
     "complete": "Quiz completed",
     "score": "You scored...",
     "out_of": "out of",

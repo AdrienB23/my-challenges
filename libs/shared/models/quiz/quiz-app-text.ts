@@ -8,6 +8,8 @@ export interface QuizAppText {
   questions: string;
   of: string;
   submit: string;
+  next: string;
+  error: string;
   complete: string;
   score: string;
   out_of: string;

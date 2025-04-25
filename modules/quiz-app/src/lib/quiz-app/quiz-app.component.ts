@@ -20,6 +20,9 @@ export class QuizAppComponent implements OnInit {
   isDark!: boolean;
   themeSelected?: ThemeEnum;
   selectedAnswer: string | null = null;
+  questionNumber = 1;
+  answerSubmitted!: boolean;
+  score = 0;
 
   pageState: PageStateEnum = PageStateEnum.START_MENU;
   componentMap = {
@@ -71,10 +74,14 @@ export class QuizAppComponent implements OnInit {
         { provide: 'quizData', useValue: this.quizData },
         { provide: 'isDark', useValue: this.isDark },
         { provide: 'themeSelected', useValue: this.themeSelected },
-        { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
         { provide: 'selectedAnswer', useValue: this.selectedAnswer },
-        { provide: 'onAnswerSelected', useValue: this.onAnswerSelected.bind(this) },
         { provide: 'questionNumber', useValue: this.questionNumber },
+        { provide: 'answerSubmitted', useValue: this.answerSubmitted },
+        { provide: 'score', useValue: this.score },
+        { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
+        { provide: 'onAnswerSelected', useValue: this.onAnswerSelected.bind(this) },
+        { provide: 'onSubmittedAnswer', useValue: this.onSubmittedAnswer.bind(this) },
+        { provide: 'onNextQuestion', useValue: this.onNextQuestion.bind(this) },
       ],
       parent: this.injector
     });
@@ -99,6 +106,22 @@ export class QuizAppComponent implements OnInit {
 
   onAnswerSelected(answer: string | null) {
     this.selectedAnswer = answer;
+  }
+
+  onSubmittedAnswer(newScore: number) {
+    this.score = newScore;
+    this.answerSubmitted = true;
+  }
+
+  onNextQuestion(newQuestionNumber: number) {
+    this.answerSubmitted = false;
+    this.selectedAnswer = null;
+    if (this.questionNumber === 10) {
+      this.pageState = PageStateEnum.SCORE;
+    }
+    else {
+      this.questionNumber = newQuestionNumber;
+    }
   }
 
   protected readonly PageStateEnum = PageStateEnum;
