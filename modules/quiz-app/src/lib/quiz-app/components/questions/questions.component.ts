@@ -25,6 +25,7 @@ export class QuestionsComponent {
     @Inject('questionNumber') public questionNumber: number,
     @Inject('answerSubmitted') public answerSubmitted: boolean,
     @Inject('score') public score: number,
+    @Inject('themeIndex') public themeIndex: number,
     @Inject('onSubmittedAnswer')
     public onSubmittedAnswer: (newScore: number) => void,
     @Inject('onAnswerSelected')
@@ -32,10 +33,7 @@ export class QuestionsComponent {
     @Inject('onNextQuestion')
     public onNextQuestion: (newQuestionNumber: number) => void,
   ) {
-    if (themeSelected != undefined) {
-      this.questionsData =
-        quizData.quizzes[themeSelected].questions[questionNumber - 1];
-    }
+    this.questionsData = quizData.quizzes[themeIndex].questions[questionNumber - 1];
   }
 
   selectAnswer(answer: string) {

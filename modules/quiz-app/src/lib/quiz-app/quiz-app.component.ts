@@ -23,6 +23,7 @@ export class QuizAppComponent implements OnInit {
   questionNumber = 1;
   answerSubmitted!: boolean;
   score = 0;
+  themeIndex!: number;
 
   pageState: PageStateEnum = PageStateEnum.START_MENU;
   componentMap = {
@@ -78,10 +79,12 @@ export class QuizAppComponent implements OnInit {
         { provide: 'questionNumber', useValue: this.questionNumber },
         { provide: 'answerSubmitted', useValue: this.answerSubmitted },
         { provide: 'score', useValue: this.score },
+        { provide: 'themeIndex', useValue: this.themeIndex },
         { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
         { provide: 'onAnswerSelected', useValue: this.onAnswerSelected.bind(this) },
         { provide: 'onSubmittedAnswer', useValue: this.onSubmittedAnswer.bind(this) },
         { provide: 'onNextQuestion', useValue: this.onNextQuestion.bind(this) },
+        { provide: 'onPlaySelected', useValue: this.onPlaySelected.bind(this) }
       ],
       parent: this.injector
     });
@@ -91,15 +94,19 @@ export class QuizAppComponent implements OnInit {
     switch (theme) {
       case 'HTML':
         this.themeSelected = ThemeEnum.HTML;
+        this.themeIndex = 0;
         break;
       case 'CSS':
         this.themeSelected = ThemeEnum.CSS;
+        this.themeIndex = 1;
         break;
       case 'Javascript':
         this.themeSelected = ThemeEnum.JS;
+        this.themeIndex = 2;
         break;
       case 'Accessibility':
         this.themeSelected = ThemeEnum.ACCESSIBILITY;
+        this.themeIndex = 3;
     }
     this.pageState = PageStateEnum.QUESTIONS;
   }
@@ -117,11 +124,17 @@ export class QuizAppComponent implements OnInit {
     this.answerSubmitted = false;
     this.selectedAnswer = null;
     if (this.questionNumber === 10) {
+      this.questionNumber = 1;
       this.pageState = PageStateEnum.SCORE;
     }
     else {
       this.questionNumber = newQuestionNumber;
     }
+  }
+
+  onPlaySelected() {
+    this.pageState = PageStateEnum.START_MENU;
+    this.score = 0;
   }
 
   protected readonly PageStateEnum = PageStateEnum;

@@ -1,6 +1,6 @@
 export enum ThemeEnum {
-  HTML,
-  CSS,
-  JS,
-  ACCESSIBILITY
+  HTML= 'HTML',
+  CSS = 'CSS',
+  JS = 'Javascript',
+  ACCESSIBILITY = 'Accessibility'
 }
