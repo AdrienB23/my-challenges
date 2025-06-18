@@ -1,4 +1,8 @@
-<main class="{{isDark ? 'dark-mode' : ''}}">
+<main [ngClass]="{
+  'dark-mode': isDark,
+  'm': screenWidth <= 1050 && screenWidth > 600,
+  's': screenWidth <= 600,
+  }">
   <div class="content-container">
     <lib-header [(isDark)]="isDark" [pageState]="pageState" [quizText]="quizText" [themeIndex]="themeIndex" [quizData]="quizData" ></lib-header>
     <div class="main-container">
