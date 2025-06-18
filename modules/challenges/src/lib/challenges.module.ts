@@ -5,6 +5,9 @@ import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [ChallengesComponent],
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet
+  ],
 })
 export class ChallengesModule {}

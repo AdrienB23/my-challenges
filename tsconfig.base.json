@@ -24,6 +24,7 @@
       "@my-challenges/password-generator": [
         "modules/password-generator/src/index.ts"
       ],
+      "@my-challenges/quiz-app": ["modules/quiz-app/src/index.ts"],
       "@my-challenges/time-tracking": ["modules/time-tracking/src/index.ts"]
     }
   },

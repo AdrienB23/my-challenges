@@ -1,0 +1,89 @@
+::ng-deep .p-inputswitch {
+    width: 48px;
+    height: 28px;
+    box-sizing: border-box;
+}
+
+::ng-deep .p-inputswitch .p-inputswitch-slider {
+    background: var(--purple);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, outline-color 0.2s;
+    border-radius: 30px;
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+}
+
+::ng-deep .p-inputswitch .p-hidden-accessible input {
+    transform: scale(0);
+}
+
+::ng-deep .p-inputswitch .p-inputswitch-slider::before {
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    margin-top: -10px;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider::before {
+    transform: translateX(20px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 8% 0;
+}
+
+.header-container.end {
+    justify-content: end;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.icon-container {
+    border-radius: 8px;
+    padding: 8px;
+    width: 56px;
+    height: 56px;
+    background-color: #F6E7FF;
+}
+
+@media (max-width: 600px) {
+    ::ng-deep .p-inputswitch {
+        width: 32px;
+        height: 20px;
+    }
+
+    ::ng-deep .p-inputswitch .p-inputswitch-slider::before {
+        width: 12px;
+        height: 12px;
+        margin-top: -6px;
+    }
+
+    ::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider::before {
+        transform: translateX(12px);
+    }
+
+    .header-container {
+        margin: 16px 0;
+    }
+
+    .dark-mode-icon {
+        width: 16px
+    }
+}

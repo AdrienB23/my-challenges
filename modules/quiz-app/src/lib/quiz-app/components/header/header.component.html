@@ -1,0 +1,13 @@
+<div class="header-container{{pageState === PageStateEnum.START_MENU ? ' end' : ''}}">
+  <div *ngIf="pageState !== PageStateEnum.START_MENU" class="theme-container">
+    <div class="icon-container theme-{{quizText.types[themeIndex].toLowerCase()}}">
+      <img class="icon-image" [alt]="quizText.types[themeIndex]" [src]="quizData.quizzes[themeIndex].icon"/>
+    </div>
+    <span class="heading-s">{{quizText.types[themeIndex]}}</span>
+  </div>
+  <div class="switch-container">
+    <img class="dark-mode-icon" [src]="'assets/images/quiz/icon-sun-' + (isDark ? 'light' : 'dark') + '.svg'" alt="Sun Icon"/>
+    <p-inputSwitch (onChange)="toggleDarkMode()"/>
+    <img class="dark-mode-icon" [src]="'assets/images/quiz/icon-moon-' + (isDark ? 'light' : 'dark') + '.svg'" alt="Moon Icon"/>
+  </div>
+</div>

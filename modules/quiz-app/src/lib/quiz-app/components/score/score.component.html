@@ -1,0 +1,23 @@
+<div class="main-component {{isDark ? 'dark-mode' : ''}}">
+  <div class="title-container">
+    <h1 class="heading-l regular">{{quizText.complete}}</h1>
+    <h2 class="heading-l">{{quizText.score}}</h2>
+  </div>
+  <div class="display-container">
+    <div class="background-container {{isDark ? 'dark-mode' : ''}}">
+      <div class="theme-container">
+        <div class="icon-container theme-{{quizText.types[themeIndex].toLowerCase()}}">
+          <img class="icon-image" [alt]="quizText.types[themeIndex]" [src]="quizData.quizzes[themeIndex].icon"/>
+        </div>
+        <span class="heading-s">{{quizText.types[themeIndex]}}</span>
+      </div>
+      <div class="score-container">
+        <h3 class="display">{{score}}</h3>
+        <span class="body-m {{isDark ? 'dark-mode' : ''}}">{{quizText.out_of}} 10</span>
+      </div>
+    </div>
+    <button class="important-button" pButton (click)="onPlaySelected()">
+      <span class="heading-s">{{ quizText.play }}</span>
+    </button>
+  </div>
+</div>

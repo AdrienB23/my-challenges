@@ -1,0 +1,8 @@
+<main class="{{isDark ? 'dark-mode' : ''}}">
+  <div class="content-container">
+    <lib-header [(isDark)]="isDark" [pageState]="pageState" [quizText]="quizText" [themeIndex]="themeIndex" [quizData]="quizData" ></lib-header>
+    <div class="main-container">
+      <div *ngIf="quizText && quizData && currentComponent" [ngComponentOutlet]="currentComponent" [ngComponentOutletInjector]="customInjector" ></div>
+    </div>
+  </div>
+</main>

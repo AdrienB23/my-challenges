@@ -1,0 +1,18 @@
+<div class="main-component">
+  <div class="text-container">
+    <div class="title-container">
+      <h1 class="heading-l regular">{{ quizText.title1 }}</h1>
+      <h2 class="heading-l">{{ quizText.title2 }}</h2>
+    </div>
+    <span class="body-s {{isDark ? 'dark-mode' : ''}}">{{ quizText.subject }}</span>
+  </div>
+  <div class="buttons-container">
+    <button (click)="onThemeSelected(type)" *ngFor="let type of quizText.types; let i = index"
+            class="menu-button {{isDark ? 'dark-mode' : ''}}" pButton>
+      <div class="icon-container theme-{{type.toLowerCase()}}">
+        <img class="icon-image" alt="{{type}}" src="{{quizData.quizzes[i].icon}}" />
+      </div>
+      <h3 class="heading-s">{{ type }}</h3>
+    </button>
+  </div>
+</div>
