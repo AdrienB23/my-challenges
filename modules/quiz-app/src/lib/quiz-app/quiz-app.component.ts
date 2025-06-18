@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, HostListener, Injector, OnInit } from '@angular/core';
 import { QuizService } from '../../../../../libs/shared/services/quiz.service';
 import { QuizAppText } from '../../../../../libs/shared/models/quiz/quiz-app-text';
 import { DataQuizApp } from '../../../../../libs/shared/models/quiz/data-quiz-app';
@@ -24,6 +24,7 @@ export class QuizAppComponent implements OnInit {
   answerSubmitted!: boolean;
   score = 0;
   themeIndex!: number;
+  screenWidth!: number;
 
   pageState: PageStateEnum = PageStateEnum.START_MENU;
   componentMap = {
@@ -35,11 +36,18 @@ export class QuizAppComponent implements OnInit {
   constructor(
     private quizService: QuizService,
     private injector: Injector
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
     this.getText();
     this.getQuestions();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
   }
 
   getText() {
@@ -50,7 +58,6 @@ export class QuizAppComponent implements OnInit {
             this.quizText = text;
           }
         });
-        console.log(this.quizText);
       }
     )
   }
@@ -59,7 +66,6 @@ export class QuizAppComponent implements OnInit {
     this.quizService.getData().subscribe(
       data => {
         this.quizData = data;
-        console.log("Raw data:", data);
       }
     )
   }
@@ -80,6 +86,7 @@ export class QuizAppComponent implements OnInit {
         { provide: 'answerSubmitted', useValue: this.answerSubmitted },
         { provide: 'score', useValue: this.score },
         { provide: 'themeIndex', useValue: this.themeIndex },
+        { provide: 'screenWidth', useValue: this.screenWidth },
         { provide: 'onThemeSelected', useValue: this.onThemeSelected.bind(this) },
         { provide: 'onAnswerSelected', useValue: this.onAnswerSelected.bind(this) },
         { provide: 'onSubmittedAnswer', useValue: this.onSubmittedAnswer.bind(this) },

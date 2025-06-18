@@ -202,6 +202,24 @@ main.dark-mode {
   background-color: var(--dark-navy);
 }
 
+main.m {
+  background-image: url("../../../../../src/assets/images/quiz/pattern-background-tablet-light.svg");
+  background-size: initial;
+}
+
+main.m.dark-mode {
+  background-image: url("../../../../../src/assets/images/quiz/pattern-background-tablet-dark.svg");
+}
+
+main.s {
+  background-image: url("../../../../../src/assets/images/quiz/pattern-background-mobile-light.svg");
+  background-size: initial;
+}
+
+main.s.dark-mode {
+  background-image: url("../../../../../src/assets/images/quiz/pattern-background-mobile-dark.svg");
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
