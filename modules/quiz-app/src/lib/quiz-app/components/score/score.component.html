@@ -1,5 +1,5 @@
 <div class="main-component {{isDark ? 'dark-mode' : ''}}">
-  <div class="text-container">
+  <div class="title-container">
     <h1 class="heading-l regular">{{quizText.complete}}</h1>
     <h2 class="heading-l">{{quizText.score}}</h2>
   </div>
@@ -7,7 +7,7 @@
     <div class="background-container {{isDark ? 'dark-mode' : ''}}">
       <div class="theme-container">
         <div class="icon-container theme-{{quizText.types[themeIndex].toLowerCase()}}">
-          <img [alt]="quizText.types[themeIndex]" [src]="quizData.quizzes[themeIndex].icon"/>
+          <img class="icon-image" [alt]="quizText.types[themeIndex]" [src]="quizData.quizzes[themeIndex].icon"/>
         </div>
         <span class="heading-s">{{quizText.types[themeIndex]}}</span>
       </div>

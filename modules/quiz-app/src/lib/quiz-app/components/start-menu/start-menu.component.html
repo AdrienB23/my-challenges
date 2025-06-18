@@ -10,7 +10,7 @@
     <button (click)="onThemeSelected(type)" *ngFor="let type of quizText.types; let i = index"
             class="menu-button {{isDark ? 'dark-mode' : ''}}" pButton>
       <div class="icon-container theme-{{type.toLowerCase()}}">
-        <img alt="{{type}}" src="{{quizData.quizzes[i].icon}}" />
+        <img class="icon-image" alt="{{type}}" src="{{quizData.quizzes[i].icon}}" />
       </div>
       <h3 class="heading-s">{{ type }}</h3>
     </button>

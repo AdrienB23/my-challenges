@@ -9,11 +9,6 @@
 
 
 /*  Containers */
-.text-container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-}
 
 .display-container {
     display: flex;
@@ -37,15 +32,24 @@
     background-color: var(--navy);
 }
 
-.theme-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 24px;
-}
-
 .score-container {
     display: flex;
     flex-direction: column;
     row-gap: 16px;
+}
+
+@media (max-width: 1050px) {
+    .display-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .display-container {
+        row-gap: 12px;
+    }
+
+    .background-container {
+        padding: 32px;
+    }
 }

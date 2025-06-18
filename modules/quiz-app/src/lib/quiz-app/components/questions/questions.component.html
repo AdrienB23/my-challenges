@@ -27,8 +27,8 @@
       </div>
       <h3 class="heading-s">{{ answer }}</h3>
       <div class="icon-result">
-        <img *ngIf="answerSubmitted && selectedAnswer !== null && answer === questionsData.answer" src="./assets/images/quiz/icon-correct.svg" alt="Correct Icon">
-        <img *ngIf="answerSubmitted && selectedAnswer !== null && answer !== questionsData.answer && selectedAnswer === answer" src="./assets/images/quiz/icon-incorrect.svg" alt="Incorrect Icon">
+        <img class="answer-icon" *ngIf="answerSubmitted && selectedAnswer !== null && answer === questionsData.answer" src="./assets/images/quiz/icon-correct.svg" alt="Correct Icon">
+        <img class="answer-icon" *ngIf="answerSubmitted && selectedAnswer !== null && answer !== questionsData.answer && selectedAnswer === answer" src="./assets/images/quiz/icon-incorrect.svg" alt="Incorrect Icon">
       </div>
     </button>
     <button *ngIf="!answerSubmitted"  class="important-button" pButton (click)="submitAnswer()">
@@ -38,7 +38,7 @@
       <span class="heading-s">{{ quizText.next }}</span>
     </button>
     <div *ngIf="selectedAnswer === null" class="error-container">
-      <img src="./assets/images/quiz/icon-error.svg" alt="Error Icon">
+      <img class="answer-icon" src="./assets/images/quiz/icon-error.svg" alt="Error Icon">
       <span class="body-m {{isDark ? 'dark-mode' : ''}}">{{quizText.error}}</span>
     </div>
   </div>

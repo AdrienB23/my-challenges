@@ -4,15 +4,15 @@
   row-gap: 48px;
 }
 
-.title-container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-}
-
 .buttons-container {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
   width: 50%;
+}
+
+@media(max-width: 1050px) {
+  .buttons-container {
+    width: 100%;
+  }
 }

@@ -69,6 +69,28 @@ h3 {
   color: var(--pure-white) !important;
 }
 
+@media (max-width: 600px) {
+  .display {
+    font-size: 88px;
+  }
+
+  .heading-l {
+    font-size: 40px;
+  }
+
+  .heading-m {
+    font-size: 20px;
+  }
+
+  .heading-s, .body-m {
+    font-size: 18px;
+  }
+
+  .body-s {
+    font-size: 14px;
+  }
+}
+
 /* Buttons */
 
 .basic-button, .menu-button {
@@ -76,9 +98,9 @@ h3 {
   justify-content: start;
   align-items: center;
   column-gap: 32px;
-  padding: 15px 17px;
+  padding: 20px 20px;
   background-color: var(--pure-white);
-  border: solid 3px var(--pure-white);
+  border: none;
   outline: none;
   border-radius: 27px;
   width: 100%;
@@ -87,11 +109,14 @@ h3 {
 
 .basic-button.dark-mode, .menu-button.dark-mode {
   background-color: var(--navy);
-  border: solid 3px var(--navy);
 }
 
 .basic-button.dark-mode *, .menu-button.dark-mode * {
   color: var(--pure-white);
+}
+
+.basic-button {
+  padding: 18px 20px;
 }
 
 .icon-container {
@@ -134,6 +159,31 @@ h3 {
   ),var(--purple);
 }
 
+@media (max-width: 1050px) {
+  .basic-button, .menu-button {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .basic-button, .menu-button {
+    column-gap: 16px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .important-button {
+    padding: 12px;
+    border-radius: 12px;
+    height: 56px;
+  }
+
+  .icon-image {
+    width: 29px;
+    padding: 0;
+  }
+}
+
 /* Containers */
 
 main {
@@ -170,10 +220,74 @@ main.dark-mode {
   width: 100%;
 }
 
+.title-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
 .text-container {
   display: flex;
   flex-direction: column;
   row-gap: 27px;
   width: 465px;
+}
+
+.theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+}
+
+@media (max-width: 1050px) {
+
+  .content-container {
+    margin: 0 64px;
+  }
+
+  .main-component {
+    flex-direction: column;
+    width: 100%;
+    row-gap: 64px;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .buttons-container {
+    row-gap: 12px;
+  }
+
+  .icon-container {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .content-container {
+    margin: 0 24px;
+  }
+
+  .main-component {
+    margin: 32px 0;
+    row-gap: 40px;
+   }
+
+  .text-container {
+    row-gap: 24px;
+  }
+
+  .icon-container, .icon-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+  }
+
 }
 

@@ -85,3 +85,15 @@
   height: 8px;
   border-radius: 100px;
 }
+
+@media (max-width: 1050px) {
+  .buttons-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .answer-icon {
+    width: 32px;
+  }
+}
